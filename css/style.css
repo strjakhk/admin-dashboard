@@ -23,6 +23,25 @@ html{
     padding: 0px;
 }
 
+.projects,
+.announcements,
+.trending{
+    padding: 10px 0.5rem;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    row-gap: 10px;
+
+    color: var(--bg-color);
+}
+
+.project-box,
+.announcement-box{
+    padding: 10px 0.5rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px -2px var(--bg-color);
+    background-color: var(--light-color-2);
+}
+
 button{
     border: none;
     outline: none;
@@ -68,15 +87,12 @@ body{
     display: grid;
     grid-template-rows: 180px 1fr 1fr;
     grid-template-columns: 
-        minmax(180px, 280px) 
+        minmax(180px, 280px)
         minmax(55vw, 1fr) 
-        minmax(180px, 280px);
+        minmax(180px, 340px);
     gap: 20px 0;
 }
 
-.main-content-child{
-    border: 1px solid #c3c3c3;
-}
 .header{
     grid-column: 2 / -1;
     background-color: var(--light-color-2);
@@ -275,32 +291,32 @@ body{
     width: 80px;
     padding: 8px 1rem;
     border-radius: 12px;
-    background-color: var(--light-color-2);
-    color: var(--bg-color);
+    background-color: var(--bg-color-1);
+    color: var(--light-color-2);
     font-family: inherit;
-    font-weight: 500;
-    font-size: 0.7rem;
+    font-weight: 400;
+    font-size: 0.6rem;
+
+    transition: all 0.3s ease;
+}
+
+.menu-project button:hover{
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 3px var(--bg-color);
 }
 
 /* Projects */
 
-.projects{
-    padding: 10px 0.5rem;
-    display: grid;
-    grid-template-rows: 40px 1fr;
-    row-gap: 10px;
-
-    color: var(--bg-color);
-}
-
-.projects > h2{
+.projects > h2,
+.announcements > h2,
+.trending > h2{
     padding-left: 0.9rem;
     font-size: 1.2rem;
 }
 
 .projects > div{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-auto-rows: clamp(180px, 180px + 2rem, 200px);
     gap: 0.8rem;
 }
@@ -309,11 +325,8 @@ body{
     display: grid;
     grid-template-rows: 15% 1fr 25%;
     row-gap: 5px;
-    padding: 10px 0.5rem;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px -2px var(--bg-color);
+
     border-left: 0.5rem solid var(--bg-color-1);
-    background-color: var(--light-color-2);
 }
 
 .project-box > h2{
@@ -333,4 +346,42 @@ body{
     width: 24px;
     height: 24px;
 }
+
+/*  announcements */
+
+.announcements{
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: minmax(220px, 340px);
+}
+
+.announcement-box{
+    padding: 40px 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement-box > div:first-child{
+    padding-bottom: 20px;
+}
+
+.announcement-box > div:last-child{
+    padding-top: 20px;
+}
+
+.announcement-box > div:not(:first-child):not(:last-child){
+    padding: 20px 0px;
+    border-top: 1px solid var(--bg-color);
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.announcement-box h2{
+    font-size: 0.7rem;
+}
+
+.announcement-box p{
+    font-size: 0.60rem;
+}
+
+
 
