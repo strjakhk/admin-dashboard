@@ -1,8 +1,10 @@
 :root{
     --bg-color: #232323;
+    --bg-color-1: #274046;
+    --bg-color-2: #dbdedf;
     --light-color-1: #c3c3c3;
     --light-color-2: #e3e3e3;
-    --search-bg-color: #323232;
+    --avatar-bg-color: #d3d3d3;
 }
 
 html{
@@ -29,7 +31,7 @@ button{
 
 .profile-picture{
     padding: 10px;
-    background-color: var(--search-bg-color);
+    background-color: var(--light-color-2);
     border-radius: 50%;
     box-shadow: 0px 0px 3px -1px var(--light-color-2);
     cursor: pointer;
@@ -55,9 +57,9 @@ ul li{
 /**/
 
 body{
-    background-color: var(--bg-color);
     color: var(--light-color-1);
     font-family: Montserrat system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color-2);
 }
 
 .content{
@@ -69,7 +71,7 @@ body{
         minmax(180px, 280px) 
         minmax(55vw, 1fr) 
         minmax(180px, 280px);
-    gap: 10px;
+    gap: 20px 0;
 }
 
 .main-content-child{
@@ -77,16 +79,20 @@ body{
 }
 .header{
     grid-column: 2 / -1;
+    background-color: var(--light-color-2);
+    box-shadow: 0px 1px 8px -3px var(--bg-color);
+    color: var(--bg-color);
 }
 
 .side-menu{
     grid-row: 1 / -1;
+   background-color: #274046;
 }
 
 .projects{
     grid-row: 2 / -1;
+    overflow-y: auto;
 }
-
 
 /* SIDE MENU */
 
@@ -138,10 +144,7 @@ body{
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(5, minmax(min-content, 1fr));
-}
-
-.header > div{
-    border: 1px solid white;
+    padding: 10px 0.2rem;
 }
 
 .search{
@@ -174,7 +177,7 @@ body{
 }
 
 .search-wrapper > label > svg{
-    fill: var(--light-color-1);
+    fill: var(--bg-color);
     width: 28px;
 }
 
@@ -194,7 +197,7 @@ body{
 
 .search-wrapper input:focus,
 .search-wrapper input:not(:placeholder-shown){
-    box-shadow: 0px 0px 5px -2px var(--light-color-2);
+    box-shadow: 0px 0px 5px -1px var(--bg-color);
 }
 
 .search input{
@@ -202,9 +205,11 @@ body{
     height: 32px;
     padding: 8px 2rem;
     border-radius: 10px;
-    background-color: var(--search-bg-color);
+    box-shadow: 0px 0px 5px -2px var(--bg-color-1);
 
-    color: var(--light-color-2);
+    background-color: var(--bg-color-2);
+
+    color: var(--bg-color);
     font-family: Montserrat;
     font-size: 0.65rem;
     letter-spacing: 0.02rem;
@@ -222,7 +227,7 @@ body{
 }
 
 .profile-notifications svg{
-    fill: var(--light-color-1);
+    fill: var(--bg-color);
     width: 24px;
     height: 28px;
     cursor: pointer;
@@ -276,3 +281,56 @@ body{
     font-weight: 500;
     font-size: 0.7rem;
 }
+
+/* Projects */
+
+.projects{
+    padding: 10px 0.5rem;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    row-gap: 10px;
+
+    color: var(--bg-color);
+}
+
+.projects > h2{
+    padding-left: 0.9rem;
+    font-size: 1.2rem;
+}
+
+.projects > div{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-auto-rows: clamp(180px, 180px + 2rem, 200px);
+    gap: 0.8rem;
+}
+
+.project-box{
+    display: grid;
+    grid-template-rows: 15% 1fr 25%;
+    row-gap: 5px;
+    padding: 10px 0.5rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px -2px var(--bg-color);
+    border-left: 0.5rem solid var(--bg-color-1);
+    background-color: var(--light-color-2);
+}
+
+.project-box > h2{
+    font-size: 1rem;
+}
+
+.project-box > p{
+    font-size: 0.75rem;
+}
+
+.project-options{
+    justify-self: end;
+}
+
+.project-options > svg{
+    fill: var(--bg-color);
+    width: 24px;
+    height: 24px;
+}
+
